@@ -1,0 +1,482 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.sprite {
+  height: 20%;
+  width: 12%;
+}
+
+.sprite:hover {
+  height: 27%;
+  width: 23%;
+  cursor: pointer;
+}
+
+.spritesContainer {
+  display: flex;
+  gap: 6%;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.button:hover {
+  border: 8x solid crimson;
+  border-style: groove;
+  font-weight: bold;
+}
+
+.button {
+  font-size: 20px;
+  color: #ffcc01;
+  font-weight: bolder;
+  position: relative;
+  top: -130px;
+}
+
+.buttonsContainer {
+  display: flex;
+  gap: 1%;
+  justify-content: center;
+}
+
+.modalSprite {
+  height: 27%;
+  width: 23%;
+}
+
+li {
+  display: inline-block;
+}
+
+.singleElement {
+  margin-right: 2%;
+}
+
+.sectionContainer {
+  display: flex;
+}
+
+.spinner {
+  height: 100px;
+  width: 100px;
+  background: linear-gradient(to bottom, rgb(254, 0, 1), 50%, white 50%);
+  border: 8px solid black;
+  border-radius: 50%;
+  position: relative;
+  animation: anim 1s linear infinite;
+}
+
+.spinner::before {
+  position: absolute;
+  height: 8px;
+  width: 100px;
+  right: 0px;
+  background: black;
+  top: 50px;
+  content: "";
+  transform: translatey(-50%);
+}
+
+.spinner::after {
+  position: absolute;
+  content: "";
+  height: 38px;
+  width: 38px;
+  top: 50px;
+  left: 50px;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 8px black, inset 0 0 0 10px white,
+    inset 0 0 0 12px black;
+}
+
+@keyframes anim {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.descriptionContainer {
+  width: 90%;
+  padding-left: 8%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+
+.dreamWorldSprite,
+.officialArtworkSprite {
+  width: 40%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  padding-top: 5%;
+  padding-bottom: 3%;
+  padding-left: 5%;
+}
+
+.modalSpritesContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.pokemonNameLabel {
+  padding-left: 8%;
+}
+
+.typesLabel,
+.abilitiesLabel {
+  padding-left: 8%;
+  padding-bottom: 3%;
+  font-weight: bolder;
+}
+
+.typesMapContainer {
+  padding-left: 5%;
+}
+
+.abiltiiesMapContainer {
+  padding-left: 3%;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.nameAndIdContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.pokemonIdContainer {
+  display: flex;
+  position: relative;
+  left: 48%;
+}
+
+.pokemonIdLabel {
+  font-weight: bold;
+  padding-right: 10%;
+}
+
+.title {
+  font-size: 400%;
+}
+
+/*Media Queries*/
+
+@media (max-width: 1024px) {
+  .spritesContainer {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: center;
+  }
+  .sprite {
+    height: 15%;
+    width: 15%;
+  }
+  .buttonsContainer {
+    position: absolute;
+    left: 45%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 720px) {
+  .spritesContainer {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 140px;
+    justify-content: center;
+  }
+  .sprite {
+    height: 15%;
+    width: 15%;
+  }
+  .buttonsContainer {
+    position: absolute;
+    bottom: 40%;
+    left: 38%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 540px) {
+  .title {
+    font-size: 300%;
+    position: absolute;
+    right: 4%;
+    top: 2%;
+  }
+  .buttonsContainer {
+    position: absolute;
+    bottom: 65%;
+    left: 35%;
+  }
+  .sprite {
+    height: 19%;
+    width: 14%;
+    margin-top: -6%;
+  }
+  .spritesContainer {
+    padding-top: 3%;
+    padding-left: 5%;
+  }
+  .card {
+    width: 90%;
+  }
+  .pokemonIdContainer {
+    position: relative;
+    left: 30%;
+  }
+}
+
+@media (max-width: 414px) {
+  .title {
+    font-size: 310%;
+    position: absolute;
+    right: 0.5%;
+    top: 2%;
+  }
+  .buttonsContainer {
+    position: absolute;
+    bottom: 64%;
+    left: 28%;
+  }
+  .sprite {
+    height: 19%;
+    width: 14%;
+    margin-top: -12%;
+  }
+  .spritesContainer {
+    padding-top: 13%;
+  }
+  .card {
+    width: 90%;
+  }
+  .pokemonIdContainer {
+    position: relative;
+    left: 30%;
+  }
+}
+
+@media (max-width: 412px) {
+  .title {
+    font-size: 310%;
+    position: absolute;
+    right: 0.5%;
+    top: 2%;
+  }
+  .buttonsContainer {
+    position: absolute;
+    bottom: 64%;
+    left: 28%;
+  }
+  .sprite {
+    height: 19%;
+    width: 14%;
+    margin-top: -12%;
+  }
+  .spritesContainer {
+    padding-top: 16%;
+  }
+  .card {
+    width: 90%;
+  }
+  .pokemonIdContainer {
+    position: relative;
+    left: 30%;
+  }
+}
+
+@media (max-width: 393px) {
+  .title {
+    font-size: 310%;
+    position: absolute;
+    right: 0.5%;
+    top: 2%;
+  }
+  .buttonsContainer {
+    position: absolute;
+    bottom: 61%;
+    left: 28%;
+  }
+  .sprite {
+    height: 19%;
+    width: 14%;
+    margin-top: -12%;
+  }
+  .spritesContainer {
+    padding-top: 13%;
+  }
+  .card {
+    width: 90%;
+  }
+  .pokemonIdContainer {
+    position: relative;
+    left: 30%;
+  }
+}
+
+@media (max-width: 390px) {
+  .title {
+    font-size: 310%;
+    position: absolute;
+    right: 0.5%;
+    top: 2%;
+  }
+  .buttonsContainer {
+    position: absolute;
+    bottom: 61%;
+    left: 28%;
+  }
+  .sprite {
+    height: 19%;
+    width: 14%;
+    margin-top: -12%;
+  }
+  .spritesContainer {
+    padding-top: 13%;
+  }
+  .card {
+    width: 90%;
+  }
+  .pokemonIdContainer {
+    position: relative;
+    left: 30%;
+  }
+}
+
+@media (max-width: 375px) {
+  .title {
+    font-size: 310%;
+    position: absolute;
+    right: 0.5%;
+    top: 2%;
+  }
+  .buttonsContainer {
+    position: absolute;
+    bottom: 54%;
+    left: 28%;
+  }
+  .sprite {
+    height: 19%;
+    width: 14%;
+    margin-top: -12%;
+  }
+  .spritesContainer {
+    padding-top: 7%;
+  }
+  .card {
+    width: 90%;
+  }
+  .pokemonIdContainer {
+    position: relative;
+    left: 25%;
+  }
+}
+
+@media (max-width: 360px) {
+  .title {
+    font-size: 310%;
+    position: absolute;
+    right: 0.5%;
+    top: 2%;
+  }
+  .buttonsContainer {
+    position: absolute;
+    bottom: 56%;
+    left: 28%;
+  }
+  .sprite {
+    height: 19%;
+    width: 14%;
+    margin-top: -12%;
+  }
+  .spritesContainer {
+    padding-top: 13%;
+  }
+  .card {
+    width: 90%;
+  }
+  .pokemonIdContainer {
+    position: relative;
+    left: 30%;
+  }
+}
+
+@media (max-width: 280px) {
+  .title {
+    font-size: 280%;
+    position: absolute;
+    right: 1%;
+    top: 2%;
+  }
+  .buttonsContainer {
+    position: absolute;
+    bottom: 55%;
+    left: 23%;
+  }
+  .sprite {
+    height: 19%;
+    width: 14%;
+    margin-top: -15%;
+  }
+  .spritesContainer {
+    padding-top: 6%;
+    padding-left: 12%;
+  }
+  .card {
+    width: 90%;
+  }
+  .pokemonIdContainer {
+    position: relative;
+    left: 13%;
+  }
+}
+/*End of Media Queries*/
